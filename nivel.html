@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Selecionar Nivel</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<style type="text/css">
+		*{
+			padding:0px;
+			margin:0px;
+		}
+		header{
+			text-align:center;
+			margin-top:6rem;
+		}
+		
+		.TabelaNivel {
+			display:flex;
+			flex-direction:column;
+			justify-content:center;
+			align-items:center;
+		}
+		
+		button{
+		  margin:6px;
+		  padding:25px 25px;
+		  width:13rem;
+		  outline:none;
+		  background:#3a33ff;
+		  border:1px solid #fff;
+		  border-radius:6px;
+		  color:#fff;
+		  font-size:12pt;
+		}
+	</style>
+	</head>
+	<body>
+		<header><h1>Escolher Nivel</h1></header>
+		<main>
+			<div class="TabelaNivel" >
+				<button id="facil" valor="1">Iniciate</button>
+				<button id="medio" valor="2">Amador</button>
+				<button id="hard"  valor="3">Profissional</button>
+			</div>
+		</main>
+		<script type="text/javascript">
+			window.onload = function(){
+				var facil = document.querySelector("#facil")
+				var medio = document.querySelector("#medio")
+				var hard = document.querySelector("#hard")
+				
+				facil.addEventListener("click",function(){
+					var nivel = facil.getAttribute("valor")
+					var nome = prompt("Qual o seu nome");
+					nome == "" ? nome ="Langa" : ""
+					window.location ="start.html?lamp=60&nivel="+nivel+"&tempo=100&nome="+nome;
+				});
+				
+				medio.addEventListener("click",function(){
+					var nivel = medio.getAttribute("valor")
+					var nome = prompt("Qual o seu nome");
+					 nome == "" ? nome ="Langa" : ""
+					window.location ="start.html?lamp=80&nivel="+nivel+"&tempo=30&nome="+nome;
+				});
+				
+				hard.addEventListener("click",function(){
+					var nivel = hard.getAttribute("valor")
+					var nome = prompt("Qual o seu nome");
+					nome == "" ? nome ="Langa" : ""
+					window.location ="start.html?lamp=55&nivel="+nivel+"&tempo=21&nome="+nome;
+				});
+			};
+		</script>
+	</body>
+</html>
